@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cnblogs.hellxz</groupId>
+	<artifactId>spring-security-parent</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<security.global.version>0.0.1</security.global.version>
+		<spring.session.version>1.3.5.RELEASE</spring.session.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- 管理maven依赖版本 -->
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>Cairo-SR7</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- 管理依赖之间的关系 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.SR3</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<!-- 引入编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<!-- jdk11 -->
+					<source>1.11</source>
+					<target>1.11</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>../spring-security-app</module>
+		<module>../spring-security-browser</module>
+		<module>../spring-security-core</module>
+		<module>../spring-security-demo</module>
+	</modules>
+</project>
