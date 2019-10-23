@@ -10,36 +10,44 @@
 	<properties>
 		<security.global.version>0.0.1</security.global.version>
 		<spring.session.version>1.3.5.RELEASE</spring.session.version>
+		<spring.social.version>1.1.6.RELEASE</spring.social.version>
+		<commons.lang3.version>3.9</commons.lang3.version>
+		<commons.collecions4.version>4.4</commons.collecions4.version>
+		<oath2.version>2.3.7.RELEASE</oath2.version>
 	</properties>
+	<repositories>
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Maven MILESTONE Repository</name>
+			<url>https://maven.springframework.org/milestone</url>
+		</repository>
+		<repository>
+			<id>spring-snnapshot</id>
+			<name>Spring Maven SNAPSHOT Repository</name>
+			<url>https://maven.springframework.org/snapshot</url>
+		</repository>
+	</repositories>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- 管理maven依赖版本 -->
-			<dependency>
-				<groupId>io.spring.platform</groupId>
-				<artifactId>platform-bom</artifactId>
-				<version>Cairo-SR7</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!-- 管理依赖之间的关系 -->
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Greenwich.SR3</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.0.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<dependencies>
+		<!-- 引入web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
-			<!-- 引入编译插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
 				<configuration>
 					<!-- jdk11 -->
 					<source>1.11</source>

@@ -12,9 +12,11 @@
 
 	<dependencies>
 		<!-- OAuth2 -->
+		
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-oauth2</artifactId>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>${oath2.version}</version>
 		</dependency>
 		<!-- 使用redis存储用户绑定信息，包含token等 -->
 		<dependency>
@@ -35,26 +37,33 @@
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-core</artifactId>
+			<version>${spring.social.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-config</artifactId>
+			<version>${spring.social.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-security</artifactId>
+			<version>${spring.social.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-web</artifactId>
+			<version>${spring.social.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
 		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>${commons.collecions4.version}</version>
 		</dependency>
 	</dependencies>
 </project>
